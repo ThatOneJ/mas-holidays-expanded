@@ -1,5 +1,5 @@
 <h1 align="center">HOLIDAYS EXPANDED!</h1>
-<h3 align="center">📅 A submod that epands upon the existing holidays with new topics and compliments! 📅</h3>
+<h3 align="center">📅 Expands upon the existing holidays with new topics and compliments! 📅</h3>
 Ever thought that Monika doesn't have much to say in regards to holidays like New Years, Halloween, Christmas, etc.
 ... Or, that you are the one that doesn't have much to say to her? Well, Holidays Expanded plans to solve this issue!
 
