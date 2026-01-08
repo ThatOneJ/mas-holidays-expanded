@@ -11,7 +11,7 @@ Ever thought that Monika doesn't have much to say in regards to holidays like Ne
 
 
 ## 🍾 HOW TO INSTALL?
- * To install this submod, simply go to the [Releases](https://docs.github.com/). tab and download "Holidays Expanded.rar".
+ * To install this submod, simply go to the [Releases](https://github.com/ThatOneJ/mas-holidays-expanded/releases/tag/v1.0). tab and download "Holidays Expanded.rar".
  * Then, simply unzip the folder inside the Submods folder in your MAS's game folder. If you don't already have it, simply create it.
  * Launch! The submod should be ready and running.
 
