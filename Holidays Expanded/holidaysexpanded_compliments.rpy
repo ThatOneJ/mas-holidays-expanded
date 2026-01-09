@@ -111,21 +111,21 @@ label hex_compliment_f14_call_you_mine2:
             $ mas_ILY()
 
         "Guess you're stuck with me.":
-            $ mas_gainAffection(2.5)
-            m 3rkbfa "Oh, [player] don't say that~"
-            m 1hubfa "Because if that's the case, I don't mind being stuck at all."
+            $ mas_gainAffection(3)
+            m 3rkbfa "Oh, [player], don't say that~"
+            m 1hubfa "Because if that's the case...Then I don't mind being stuck at all."
 
         "You belong to me.":
-            $ mas_loseAffection(10)
+            $ mas_loseAffection()
             m 1ekc "..."
-            m 2rksdla "I don't really like how that sounds, [player]."
-            m 2eka "I want to be with you because I chose to be... not because I'm owned."
-            m 2ekd "Please, don't things like that."
+            m 2rksdla "I don't like how that sounds, [player]."
+            m 2eka "I want to be with you because we chose each other... not because I'm owned."
+            m 2ekd "Please, don't say things like that."
     return
 
 label hex_compliment_f14_call_you_mine3:
     $ mas_gainAffection(1)
-    m 1ekbfa "I still feel that way too."
+    m 1ekbfa "I still feel that way as well."
     m 3hubfa "Choosing you is the best decision I've ever made, [player]."
     m 6hubfb "I'll love you forever and ever."
     $ mas_ILY()

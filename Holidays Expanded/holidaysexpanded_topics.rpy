@@ -1,7 +1,7 @@
 init -990 python in mas_submod_utils:
     Submod(
         author="ThatOneJ",
-        name="Holidays Expanded!",
+        name="Holidays Expanded",
         description="Expands upon the existing holidays with new topics and compliments!",
         version="1.0.0",
         dependencies={},
