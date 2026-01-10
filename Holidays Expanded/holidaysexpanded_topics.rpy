@@ -310,7 +310,7 @@ init 5 python:
             prompt="Do you feel different when the year changes?",
             category=["holidays","new year"],
             pool=True,
-            conditional="mas_isNYE() or mas_isNYD()",
+            conditional="mas_isNYE(), mas_isNYD()",
             action=EV_ACT_UNLOCK,
             aff_range=(mas_aff.NORMAL, None),
             years=[],
@@ -561,9 +561,9 @@ init 5 python:
                 prompt="Planning [player]'s birthday surprise",
                 category=["holidays","you"],
                 action=EV_ACT_RANDOM,
-                conditional="mas_isplayer_bday()",
-                start_date=mas_player_bday,
-                end_date=mas_player_bday + datetime.timedelta(days=1),
+                conditional="persistent._mas_player_bday_in_player_bday_mode:",
+                start_date=mas_isplayer_bday(),
+                end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
                 aff_range=(mas_aff.NORMAL, None),
                 years=[]
             ),
@@ -572,8 +572,8 @@ init 5 python:
 
         MASUndoActionRule.create_rule_EVL(
             "hex_pbday_planning_surprise",
-            mas_player_bday,
-            mas_player_bday + datetime.timedelta(days=1)
+            mas_isplayer_bday(),
+            mas_isplayer_bday() + datetime.timedelta(days=1)
         )
 
 label hex_pbday_planning_surprise:
@@ -597,10 +597,10 @@ init 5 python:
             prompt="This has been my favorite birthday ever!",
             category=["holidays","you"],
             pool=True,
-            conditional="mas_isplayer_bday()",
+            conditional="persistent._mas_player_bday_in_player_bday_mode:",
             action=EV_ACT_UNLOCK,
-            start_date=mas_player_bday,
-            end_date=mas_player_bday + datetime.timedelta(days=1),
+            start_date=mas_isplayer_bday(),
+            end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
             aff_range=(mas_aff.AFFECTIONATE, None),
             years=[],
             rules={"no_unlock": None}
@@ -610,8 +610,8 @@ init 5 python:
 
     MASUndoActionRule.create_rule_EVL(
         "hex_pbday_favorite_birthday",
-        mas_player_bday,
-        mas_player_bday + datetime.timedelta(days=1)
+        mas_isplayer_bday(),
+        mas_isplayer_bday() + datetime.timedelta(days=1)
     )
 
 label hex_pbday_favorite_birthday:
@@ -643,9 +643,9 @@ init 5 python:
             prompt="People that celebrate [player]'s birthday",
             category=["holidays","you","reflection"],
             action=EV_ACT_RANDOM,
-            conditional="mas_isplayer_bday()",
-            start_date=mas_player_bday,
-            end_date=mas_player_bday + datetime.timedelta(days=1),
+            conditional="persistent._mas_player_bday_in_player_bday_mode",
+            start_date=mas_isplayer_bday()
+            end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
             aff_range=(mas_aff.HAPPY, None),
             years=[]
         ),
@@ -654,8 +654,8 @@ init 5 python:
 
     MASUndoActionRule.create_rule_EVL(
         "hex_pbday_other_celebrations",
-        mas_player_bday,
-        mas_player_bday + datetime.timedelta(days=1)
+        mas_isplayer_bday(),
+        mas_isplayer_bday() + datetime.timedelta(days=1)
     )
 
 label hex_pbday_other_celebrations:
@@ -702,9 +702,9 @@ init 5 python:
             prompt="Cake Day",
             category=["holidays","technology","society","you"],
             action=EV_ACT_RANDOM,
-            conditional="mas_isplayer_bday()",
-            start_date=mas_player_bday,
-            end_date=mas_player_bday + datetime.timedelta(days=1),
+            conditional="persistent._mas_player_bday_in_player_bday_mode",
+            start_date=mas_isplayer_bday(),
+            end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
             aff_range=(mas_aff.HAPPY, None),
             years=[]
         ),
@@ -713,8 +713,8 @@ init 5 python:
 
     MASUndoActionRule.create_rule_EVL(
         "hex_pbday_cakeday",
-        mas_player_bday,
-        mas_player_bday + datetime.timedelta(days=1)
+        mas_isplayer_bday(),
+        mas_isplayer_bday() + datetime.timedelta(days=1)
     )
 
 label hex_pbday_cakeday:

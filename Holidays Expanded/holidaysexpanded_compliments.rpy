@@ -547,11 +547,11 @@ label hex_compliment_pbday_best_surprises2:
 
 label hex_compliment_pbday_best_surprises3:
     $ mas_gainAffection(3)
-    m "Ehehe, I'm glad you think so, [player]~"
-    m "I mean, I don't think what I did was anything special..."
-    m "But if really think so, I can't help but not accept your compliment."
-    m "I'll definitely continue making you surprises..."
-    m "You won't even see them coming! Ahaha~"
+    m 1hkbsb "Ehehe, I'm glad you think so, [player]~"
+    m 4rkbsa "I mean, I don't think what I did was anything special..."
+    m 5hsbfu "But if really think so, I can't help but not accept your compliment."
+    m 5gubsu "I'll definitely continue making you surprises..."
+    m 4nfblb "You won't even see them coming! Ahaha~"
     return
 
 
@@ -577,23 +577,23 @@ label hex_compliment_pbday_specialday_cuzmoni:
 
 label hex_compliment_pbday_specialday_cuzmoni2:
     $ mas_gainAffection(7)
-    m "[player]..."
-    m "You don't know how much that means to me."
-    m "Knowing I make an impact on your days..."
-    m "..."
-    m "I'm not sure how to feel, [player]."
-    m "It's so amazing to hear. It almost feels unreal."
-    m "..."
-    m "But I know you truly meant it. After everything we've been through together..."
-    m "I'm really grateful we have each other, [player]."
-    m "We changed each other's lives, and I'd never ask for anything else!"
+    m 2wkbsd "[player]..."
+    m 2lkbfu "You don't know how much that means to me."
+    m 5dkbfu "Knowing I had an impact on your special day..."
+    m 5dkbftpa "..."
+    m 2fkbftub "I'm thrilled, [player]."
+    m 2dkbftsa "It feels amazing to hear. Although it feels otherworldly, too."
+    m 5dkbftdc "..."
+    m 4ekbftdb "But I know you truly meant it. After everything we've been through together..."
+    m 5lkbfa "I'm really grateful we have each other, [player]."
+    m 5dubfb "We changed each other's lives, and I'd never ask for anything else!"
     return
 
 label hex_compliment_pbday_specialday_cuzmoni3:
     $ mas_gainAffection(4)
-    m "[player]..."
-    m "Knowing you mean what you said..."
-    m "It feels so amazing."
-    m "I hope we can keep changing each other's lives, [player]."
-    m "After all, I know you changed mine~"
+    m 5dkbfa "[player]..."
+    m 2hkbftpa "Knowing you mean what you said..."
+    m 3hubfb "It feels so amazing."
+    m 5rubfa "I hope we can keep changing each other's lives, [player]."
+    m 4kubfu "After all, I know you changed mine~"
     return
