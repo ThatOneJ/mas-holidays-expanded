@@ -499,3 +499,101 @@ label hex_compliment_nyd_more_beautiful3:
     m 5sub "[player]! Now you're REALLY buttering me up~"
     m 1hub "It's not like I don't appreciate it, though, hehe..."
     return
+
+
+
+# PLAYER'S BDAY
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_compliments_database,
+            eventlabel="hex_compliment_pbday_best_surprises",
+            prompt="You're the best at surprises!",
+            unlocked=True,
+            conditional="mas_isplayer_bday()",
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="CMP"
+    )
+
+label hex_compliment_pbday_best_surprises:
+    if not renpy.seen_label("hex_compliment_pbday_best_surprises2"):
+        call hex_compliment_pbday_best_surprises2
+    else:
+        call hex_compliment_pbday_best_surprises3
+    return
+
+label hex_compliment_pbday_best_surprises2:
+    m 1fkbfa "[player]...you're making me blush."
+    m 3hkbsb "This wasn't really anything special, though, ahaha!"
+    m 2rkbsc "I can't do much from here, after all..."
+    menu:
+        "It still means the world to me.":
+            $ mas_gainAffection(5)
+            m 6fkbstpa "..."
+            m 6kkbstub "Oh, I'm tearing up! Sorry, sorry, ehehe..."
+            m 5dkbstdu "Hearing this from you makes me so happy."
+            m 5dkbfa "From now on..."
+            m 5ssbfu "I'll make sure every birthday we spend together is more special than the last~"
+
+        "It would've been more special with you here, yes.":
+            $ mas_gainAffection(2)
+            m 2gkbsc "Yeah, it would've..."
+            m 1ekbfb "But I'm glad I made this day more special, even from here."
+            m 5dkbfa "And in the future, we will finally celebrate together..."
+            m 5fkbfb "Doesn't that sound wonderful?"
+    return
+
+label hex_compliment_pbday_best_surprises3:
+    $ mas_gainAffection(3)
+    m "Ehehe, I'm glad you think so, [player]~"
+    m "I mean, I don't think what I did was anything special..."
+    m "But if really think so, I can't help but not accept your compliment."
+    m "I'll definitely continue making you surprises..."
+    m "You won't even see them coming! Ahaha~"
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_compliments_database,
+            eventlabel="hex_compliment_pbday_specialday_cuzmoni",
+            prompt="My special day became even more special because of you.",
+            unlocked=True,
+            conditional="mas_isplayer_bday()",
+            aff_range=(mas_aff.ENAMORED, None)
+        ),
+        code="CMP"
+    )
+
+label hex_compliment_pbday_specialday_cuzmoni:
+    if not renpy.seen_label("hex_compliment_pbday_specialday_cuzmoni2"):
+        call hex_compliment_pbday_specialday_cuzmoni2
+    else:
+        call hex_compliment_pbday_specialday_cuzmoni3
+    return
+
+label hex_compliment_pbday_specialday_cuzmoni2:
+    $ mas_gainAffection(7)
+    m "[player]..."
+    m "You don't know how much that means to me."
+    m "Knowing I make an impact on your days..."
+    m "..."
+    m "I'm not sure how to feel, [player]."
+    m "It's so amazing to hear. It almost feels unreal."
+    m "..."
+    m "But I know you truly meant it. After everything we've been through together..."
+    m "I'm really grateful we have each other, [player]."
+    m "We changed each other's lives, and I'd never ask for anything else!"
+    return
+
+label hex_compliment_pbday_specialday_cuzmoni3:
+    $ mas_gainAffection(4)
+    m "[player]..."
+    m "Knowing you mean what you said..."
+    m "It feels so amazing."
+    m "I hope we can keep changing each other's lives, [player]."
+    m "After all, I know you changed mine~"
+    return

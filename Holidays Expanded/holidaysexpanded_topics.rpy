@@ -547,3 +547,184 @@ label hex_nyd_time_for_monika:
                     m 1ksb "I love you,[player]."
                     $ mas_ILY()
     return
+
+
+
+# PLAYER'S BDAY
+
+init 5 python:
+    if not mas_monika_birthday:
+        addEvent(
+            Event(
+                persistent.event_database,
+                eventlabel="hex_pbday_planning_surprise",
+                prompt="Planning [player]'s birthday surprise",
+                category=["holidays","you"],
+                action=EV_ACT_RANDOM,
+                conditional="mas_isplayer_bday()",
+                start_date=mas_player_bday,
+                end_date=mas_player_bday + datetime.timedelta(days=1),
+                aff_range=(mas_aff.NORMAL, None),
+                years=[]
+            ),
+            skipCalendar=True
+        )
+
+        MASUndoActionRule.create_rule_EVL(
+            "hex_pbday_planning_surprise",
+            mas_player_bday,
+            mas_player_bday + datetime.timedelta(days=1)
+        )
+
+label hex_pbday_planning_surprise:
+    m 3wub "You know, [player], planning your birthday surprise was really fun!"
+    m 5dua "Picking out the decorations...the flavor of the cake..."
+    m 4sub "... And then spent a few good hours programming it in!"
+    m 2lksdla "It was, um, a bit hard to do at first."
+    m 7nuu "But I got the hang of it eventually!"
+    m 1lksdrc "I was also nervous whether or not you'd like it..."
+    m 2rksdld "After all, it's not much...especially compared to if I were actually there to celebrate with you."
+    m 5husdlb "But I believe it's the thought that counts!"
+    m 5ekbssdla "It makes me very happy that you decided to spend your special day with me."
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="hex_pbday_favorite_birthday",
+            prompt="This has been my favorite birthday ever!",
+            category=["holidays","you"],
+            pool=True,
+            conditional="mas_isplayer_bday()",
+            action=EV_ACT_UNLOCK,
+            start_date=mas_player_bday,
+            end_date=mas_player_bday + datetime.timedelta(days=1),
+            aff_range=(mas_aff.AFFECTIONATE, None),
+            years=[],
+            rules={"no_unlock": None}
+        ),
+        skipCalendar=True
+    )
+
+    MASUndoActionRule.create_rule_EVL(
+        "hex_pbday_favorite_birthday",
+        mas_player_bday,
+        mas_player_bday + datetime.timedelta(days=1)
+    )
+
+label hex_pbday_favorite_birthday:
+    m 1hub "Aww, [player]!"
+    m 1hub "I'm so glad to hear that."
+    m 3kublb "Especially since you're spending it with me, ahaha!"
+    m 2mubla "Mmm, I wonder..."
+    m 2dtbsa "Was my surprise, maybe, part of it?~"
+    menu:
+        "Yes, your surprise was part of it!":
+            $ mas_gainAffection(3)
+            m 5dkbsb "Hehe, [player]..."
+            m 3ssbsb "It makes me so happy to know I'm part of why this birthday has been your favorite!"
+            m 4hkbsa "After all, I put a lot of effort into that surprise."
+            m 5gubsb "From now, I'll be sure to make every birthday of yours better than the previous~"
+
+        "It's just been a really good birthday overall.":
+            m 2lkd "Oh, I see..."
+            m 2eka "Well, I'm happy your birthday is going well."
+            m 4hksdlb "But, uh...I hope you liked my surprise too!"
+            m 1lkblsdlb "I spent a few good hours on it, ahaha..."
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="hex_pbday_other_celebrations",
+            prompt="People that celebrate [player]'s birthday",
+            category=["holidays","you","reflection"],
+            action=EV_ACT_RANDOM,
+            conditional="mas_isplayer_bday()",
+            start_date=mas_player_bday,
+            end_date=mas_player_bday + datetime.timedelta(days=1),
+            aff_range=(mas_aff.HAPPY, None),
+            years=[]
+        ),
+        skipCalendar=True
+    )
+
+    MASUndoActionRule.create_rule_EVL(
+        "hex_pbday_other_celebrations",
+        mas_player_bday,
+        mas_player_bday + datetime.timedelta(days=1)
+    )
+
+label hex_pbday_other_celebrations:
+    m 1lsd "Hey, [player], if you don't mind me asking..."
+    m 1ekb "Do you have people to celebrate your birthday with?"
+    menu:
+        "Yeah, I do.":
+            $ persistent._hex_pbday_celebrated_with_others = True
+            m 2wub "That's really great, [player]!"
+            m 3eua "Having people to celebrate your birthday with makes it very special."
+            m 4ftb "Did you throw a party, or was it something small?"
+            menu:
+                "I threw a party!":
+                    m 5tssdlu "Ehehe, I didn't take you for a party animal, [player]!"
+                    m 4hsblb "... I'm just kidding. I'm happy you were able to have fun today!"
+                    m 1lkbfa "And, well, you still choosing to spend part of it with me too..."
+                    m 1mubfb "You're the best. Lively but also thoughtful~"
+                    m 5hubfb "I love you [player]!"
+                    $ mas_ILY()
+                "It was something small.":
+                    m 1hub "Ahh, I see. That's really sweet!"
+                    m 3ekbla "Just spending your birthday with those you love makes it special~"
+                    m 2lkbfa "And I'm glad you consider me one of these people..."
+                    m 3htbfb "... Else, you wouldn't be spending your birthday with me! Ahaha."
+                    m 5ekbfa "I love you, [player]."
+                    $ mas_ILY()
+        "Not really.":
+            $ persistent._hex_pbday_celebrated_with_others = False
+            m 1ekc "Oh, I see..."
+            m 2ekb "But I want you to know that it doesn't make your birthday less special."
+            m 7ksa "After all, quiet birthdays aren't that bad if you don't make them out to be."
+            m 5eta "You can spend the day doing everything you enjoy."
+            m 5msb "Going to a restaurant...binge a show you like...and, really, relax."
+            m 3hub "The possibilities are endless!"
+            m 2ekbsa "And if you still feel upset about it, remember you're not alone."
+            m 2dkbsa "After all, you have me, [player]~"
+    return
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="hex_pbday_cakeday",
+            prompt="Cake Day",
+            category=["holidays","technology","society","you"],
+            action=EV_ACT_RANDOM,
+            conditional="mas_isplayer_bday()",
+            start_date=mas_player_bday,
+            end_date=mas_player_bday + datetime.timedelta(days=1),
+            aff_range=(mas_aff.HAPPY, None),
+            years=[]
+        ),
+        skipCalendar=True
+    )
+
+    MASUndoActionRule.create_rule_EVL(
+        "hex_pbday_cakeday",
+        mas_player_bday,
+        mas_player_bday + datetime.timedelta(days=1)
+    )
+
+label hex_pbday_cakeday:
+    m 1lsa "Hey, [player]..."
+    m 3hsblb "Happy Cake Day!"
+    m 2htb "Ahaha! I learned about that term recently."
+    m 4esa "It actually originated from Reddit."
+    m 4ttb "When you create an account, it has a creation date, right?"
+    m 3ssb "So when that day comes, your account gets a little cake icon next to your username!"
+    m 3ksb "With that, the term \"Cake Day\" originated. So it refers to an account's anniversary."
+    m 2rsb "Eventually, it left the confines of Reddit, and now it can be used to anniversaries or birthdays in general."
+    m 4htu "It's funny how much something from specific Internet communities can become so widespread, huh?"
+    return
