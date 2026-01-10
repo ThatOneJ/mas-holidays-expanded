@@ -310,7 +310,10 @@ init 5 python:
             prompt="Do you feel different when the year changes?",
             category=["holidays","new year"],
             pool=True,
-            conditional="mas_isNYE(), mas_isNYD()",
+            conditional=(
+                "mas_isNYE() "
+                "mas_isNYD()"
+            ),
             action=EV_ACT_UNLOCK,
             aff_range=(mas_aff.NORMAL, None),
             years=[],
