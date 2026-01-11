@@ -564,19 +564,11 @@ init 5 python:
                 prompt="Planning [player]'s birthday surprise",
                 category=["holidays","you"],
                 action=EV_ACT_RANDOM,
-                conditional="persistent._mas_player_bday_in_player_bday_mode:",
-                start_date=mas_isplayer_bday(),
-                end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
+                conditional="mas_isplayer_bday()",
                 aff_range=(mas_aff.NORMAL, None),
                 years=[]
             ),
             skipCalendar=True
-        )
-
-        MASUndoActionRule.create_rule_EVL(
-            "hex_pbday_planning_surprise",
-            mas_isplayer_bday(),
-            mas_isplayer_bday() + datetime.timedelta(days=1)
         )
 
 label hex_pbday_planning_surprise:
@@ -600,21 +592,13 @@ init 5 python:
             prompt="This has been my favorite birthday ever!",
             category=["holidays","you"],
             pool=True,
-            conditional="persistent._mas_player_bday_in_player_bday_mode:",
+            conditional="mas_isplayer_bday()",
             action=EV_ACT_UNLOCK,
-            start_date=mas_isplayer_bday(),
-            end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
             aff_range=(mas_aff.AFFECTIONATE, None),
             years=[],
             rules={"no_unlock": None}
         ),
         skipCalendar=True
-    )
-
-    MASUndoActionRule.create_rule_EVL(
-        "hex_pbday_favorite_birthday",
-        mas_isplayer_bday(),
-        mas_isplayer_bday() + datetime.timedelta(days=1)
     )
 
 label hex_pbday_favorite_birthday:
@@ -646,19 +630,11 @@ init 5 python:
             prompt="People that celebrate [player]'s birthday",
             category=["holidays","you","reflection"],
             action=EV_ACT_RANDOM,
-            conditional="persistent._mas_player_bday_in_player_bday_mode",
-            start_date=mas_isplayer_bday()
-            end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
+            conditional="mas_isplayer_bday()",
             aff_range=(mas_aff.HAPPY, None),
             years=[]
         ),
         skipCalendar=True
-    )
-
-    MASUndoActionRule.create_rule_EVL(
-        "hex_pbday_other_celebrations",
-        mas_isplayer_bday(),
-        mas_isplayer_bday() + datetime.timedelta(days=1)
     )
 
 label hex_pbday_other_celebrations:
@@ -705,21 +681,13 @@ init 5 python:
             prompt="Cake Day",
             category=["holidays","technology","society","you"],
             action=EV_ACT_RANDOM,
-            conditional="persistent._mas_player_bday_in_player_bday_mode",
-            start_date=mas_isplayer_bday(),
-            end_date=mas_isplayer_bday() + datetime.timedelta(days=1),
+            conditional="mas_isplayer_bday()",
             aff_range=(mas_aff.HAPPY, None),
             years=[]
         ),
         skipCalendar=True
     )
-
-    MASUndoActionRule.create_rule_EVL(
-        "hex_pbday_cakeday",
-        mas_isplayer_bday(),
-        mas_isplayer_bday() + datetime.timedelta(days=1)
-    )
-
+    
 label hex_pbday_cakeday:
     m 1lsa "Hey, [player]..."
     m 3hsblb "Happy Cake Day!"
