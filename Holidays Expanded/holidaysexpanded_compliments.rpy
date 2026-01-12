@@ -597,3 +597,93 @@ label hex_compliment_pbday_specialday_cuzmoni3:
     m 5rubfa "I hope we can keep changing each other's lives, [player]."
     m 4kubfu "After all, I know you changed mine~"
     return
+
+
+
+# MONIKA'S BIRTHDAY
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_compliments_database,
+            eventlabel="hex_compliment_monika_bday_celebrated",
+            prompt="You deserve to be celebrated!",
+            unlocked=True,
+            conditional="mas_isMonikaBirthday()",
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="CMP"
+    )
+
+label hex_compliment_monika_bday_celebrated:
+    if not renpy.seen_label("hex_compliment_monika_bday_celebrated_2"):
+        call hex_compliment_monika_bday_celebrated_2
+    else:
+        call hex_compliment_monika_bday_celebrated_3
+    return
+
+label hex_compliment_monika_bday_celebrated_2:
+    $ mas_gainAffection(3)
+    return
+
+label hex_compliment_monika_bday_celebrated_3:
+    $ mas_gainAffection(1.5)
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_compliments_database,
+            eventlabel="hex_compliment_monika_bday_wonderful",
+            prompt="Your birthday should be as wonderful as you are.",
+            unlocked=True,
+            conditional="mas_isMonikaBirthday()",
+            aff_range=(mas_aff.NORMAL, None)
+        ),
+        code="CMP"
+    )
+
+label hex_compliment_monika_bday_wonderful:
+    if not renpy.seen_label("hex_compliment_monika_bday_wonderful_2"):
+        call hex_compliment_monika_bday_wonderful_2
+    else:
+        call hex_compliment_monika_bday_wonderful_3
+    return
+
+label hex_compliment_monika_bday_wonderful_2:
+    $ mas_gainAffection(3)
+    return
+
+label hex_compliment_monika_bday_wonderful_3:
+    $ mas_gainAffection(1.5)
+    return
+
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent._mas_compliments_database,
+            eventlabel="hex_compliment_monika_bday_lucky",
+            prompt="I'm lucky to have you in my life.",
+            unlocked=True,
+            conditional="mas_isMonikaBirthday()",
+            aff_range=(mas_aff.AFFECTIONATE, None)
+        ),
+        code="CMP"
+    )
+
+label hex_compliment_monika_bday_lucky:
+    if not renpy.seen_label("hex_compliment_monika_bday_lucky_2"):
+        call hex_compliment_monika_bday_lucky_2
+    else:
+        call hex_compliment_monika_bday_lucky_3
+    return
+
+label hex_compliment_monika_bday_lucky_2:
+    $ mas_gainAffection(4)
+    return
+
+label hex_compliment_monika_bday_lucky_3:
+    $ mas_gainAffection(2)
+    return

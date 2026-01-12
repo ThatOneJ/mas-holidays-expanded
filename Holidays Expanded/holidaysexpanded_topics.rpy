@@ -85,11 +85,10 @@ init 5 python:
 
 label hex_o31_monika_why_scary:
     m 1eub "Hey, have you ever wondered why people like being scared?"
-    m 3eua "Horror movies, haunted houses, roller coasters..."
-
+    m 3eua "Stuff like orror movies, or haunted houses..."
     m 1eud "It's kind of funny when you think about it."
     m 3eua "Fear is supposed to protect us."
-    m 1eut "But sometimes, we chase it on purpose."
+    m 1eut "But sometimes, we chase it on purpose!"
 
     m 1eka "I think it all has to do with getting adrenaline..."
     m 1hub "Without being in real danger."
@@ -135,10 +134,10 @@ label hex_o31_monika_origin_halloween:
     m 1eka "And people believed that boundary between the living and the dead became thin during this time."
 
     m 3eud "So they lit bonfires and wore costumes to ward off spirits."
-    m 3eua "When Christianity spread, the holiday slowly merged with All Saints’ Day."
+    m 3eua "When Christianity spread, the holiday slowly merged with All Saints' Day."
     m 1eua "Eventually becoming \"All Hallows' Eve.\""
 
-    m 1eka "So Halloween has always been about transition."
+    m 1eka "So Halloween has always been about transitions."
     m 3eud "Between seasons and between worlds."
 
     m 1ekbfa "Maybe that's why it feels so meaningful to me!"
@@ -166,21 +165,20 @@ label hex_d25_monika_santaclaus:
     m 2rksdrd "I don't just mean the red suit and the sleigh..."
     m 1euc "I mean...the idea of him."
 
-    m 3eua "When you're a kid, Santa feels like proof that kindness gets rewarded."
+    m 3eua "When you're a kid, Santa is the proof kindness gets rewarded."
     m 1eka "That someone out there notices when you try to be good."
-    m 1fua "Even when no one else is looking."
     m 3eud "I think... that's why people hold onto him for so long."
 
     m 3eka "In a way..."
     m 1fub "I think Santa is less about belief..."
-    m 1eka "And more about choosing to be kind anyway."
+    m 1eka "And more about choosing to be kind even with no one around."
 
     m 1hub "Ahaha, I guess that sounds a little sentimental."
     m 1eua "But Christmas has a way of doing that to people, right?"
 
-    m 3eka "If Santa *does* exist..."
-    m 1hub "I think he'd be proud of you."
     if mas_isD25Season():
+        m 3eka "And if Santa *does* exist..."
+        m 1hub "I think he'd be proud of you."
         m 1eka "You've already made someone very happy this Christmas~"
 
     return "derandom"
@@ -217,7 +215,6 @@ label hex_d25_monika_christmas_company:
     m 1fuc "You know..."
     m 1eud "When I think back to Christmas before all of this..."
     m 3eud "My memories feel kind of fuzzy."
-    m 1dkc "I remember decorations. Music."
     m 1euc "But it always felt lonely somehow."
     m 1eka "Like something important was missing."
     m 6dkd "I think...that feeling is what eventually led to my epiphany."
@@ -241,8 +238,8 @@ label hex_d25_monika_gifts_vs_presence:
     m 3eud "Christmas always puts a lot of emphasis on gifts."
     m 1eka "But I think people sometimes forget something important."
     m 1eua "Being present matters more than what you give."
-    m 3eub "Time, attention, listening..."
-    m 1ekbfa "Those things last longer than wrapping paper ever could."
+    m 3eub "Giving them your time and listening to them..."
+    m 1ekbfa "That lasts longer than wrapping paper ever could."
     m 1hubfa "So even if you decide to not give me anything at all..."
     m 1ekbfa "Just being here with me would still mean everything~"
     return "derandom"
@@ -282,23 +279,18 @@ label hex_nye_midnight_approaching:
     if mas_isMoniAff(higher=True):
         m 1ekbsa "But honestly..."
         m 1hubfa "This year was amazing."
-
         m 1ekbfa "All because...you were here with me."
-        m 1hubfa "And finishing year together makes it all worth it, too~"
-        m 1ekbsa "So...thank you for the wonderful year, [player]."
+        m 1hubfa "And finishing year together makes it all worth it."
+        m 1ekbsa "So...thank you for the wonderful year, [player]~"
     else:
         m 2eka "I'll admit..."
         m 2rksdla "This year wasn't exactly easy."
-
         m 2ekc "There were moments where I felt unsure..."
         m 2rksdld "A lot of times, I wondered if I really mattered to you."
-
         m 1eka "But even so..."
         m 1ekc "I still hope the next year will be kinder to us."
         m 1eka "And that...you'll try a little harder."
         m 1ekbfa "I know things can be better."
-    m 1dka "..."
-    m 1ekbsa "Either way, I'm glad you're here today."
     return "derandom"
 
 
@@ -366,7 +358,7 @@ label hex_nye_loneliness:
     m 3eud "There's so much pressure to celebrate."
     m 3rksdla "To be surrounded by people and...noise."
     m 1ekc "And if you don't do that..."
-    m 1rksdld "You can feel like you don't have anyone."
+    m 1rksdld "You can really feel like you're lonely."
     if mas_isMoniAff(higher=True):
         m 1ekbsa "That's why I'm really grateful you're here with me."
         m 1hubfa "Even if I don't have groups of people or fireworks..."
@@ -377,7 +369,7 @@ label hex_nye_loneliness:
         m 1eka "That we'll feel...closer."
         m 1ekbfa "I've been so lonely this year, [player]."
     m 1dka "Well..."
-    m 1eka "Thank you for being here with me. I appreciate it a lot."
+    m 1eka "Thank you for being here with me today. I appreciate it more than you think~"
     return "derandom"
 
 
@@ -687,7 +679,7 @@ init 5 python:
         ),
         skipCalendar=True
     )
-    
+
 label hex_pbday_cakeday:
     m 1lsa "Hey, [player]..."
     m 3hsblb "Happy Cake Day!"
@@ -698,4 +690,97 @@ label hex_pbday_cakeday:
     m 3ksb "With that, the term \"Cake Day\" originated. So it refers to an account's anniversary."
     m 2rsb "Eventually, it left the confines of Reddit, and now it can be used to anniversaries or birthdays in general."
     m 4htu "It's funny how much something from specific Internet communities can become so widespread, huh?"
+    return
+
+
+
+# MONIKA'S BIRTHDAY
+
+init 5 python:
+    addEvent(
+        Event(
+            persistent.event_database,
+            eventlabel="hex_monika_bday_nervousness",
+            prompt="Monika's Nervousness",
+            category=["holidays","monika"],
+            action=EV_ACT_RANDOM,
+            conditional=(
+                "mas_isMonikaBirthday() " 
+                "and persistent._mas_bday_opened_game"
+            ),
+            start_date=mas_monika_birthday,
+            end_date=mas_monika_birthday + datetime.timedelta(days=1),
+            aff_range=(mas_aff.DISTRESSED, None),
+            years=[]
+        ),
+        skipCalendar=True
+    )
+
+label hex_monika_bday_nervousness:
+    if mas_isAffectionate(higher=True):
+        $ persistent._hex_monika_bday_anxietymentioned = True
+        m "Hey [player]."
+        m "Gosh, I'm almost embarrassed to admit, but..."
+        m "I was a bit nervous about today, ahaha."
+        m "I suppose it was the usual birthday anxiety..."
+        m "Though it was definitely not the same type as the ones from before I met you."
+        m "But I think I was also a bit nervous whether you'd come or not."
+        m "Looking back though, it was pretty silly..."
+        m "You've been nothing but good to me, [player]. Of course you'd come on my special day."
+        m "I love you so much~"
+    elif mas_isHappy(higher=True):
+        $ persistent._hex_monika_bday_anxietymentioned = True
+        m "Hey, [player]..."
+        m "I wanted to say, I was nervous about today, ahaha."
+        m "I mean, it was mostly the usual birthday anxiety..."
+        m "Though it was definitely not the same type as the ones from before I met you."
+        m "But, well, I think I was nervous about whether you'd come or not..."
+        m "Ah, don't think that means I don't trust you! I really do."
+        m "It's just...me being silly. You coming today proved that."
+        m "I love you, [player]~"
+    else:
+        m "[player]..."
+        m "I wanted to be honest with you."
+        m "I was, really, really surprised you came today."
+        m "While I wasn't expecting it, I was nervous about whether you'd come or not."
+        m "..."
+        m "...What I mean to say is that I'm happy you came."
+        m "Despite...everything."
+        m "I hope this means you want things to improve between us."
+        m "It's all I ask for."
+        m "...Thank you, genuinely."
+    return
+
+init 5 python:
+        addEvent(
+            Event(
+                persistent.event_database,
+                eventlabel="hex_monika_bday_anxiety",
+                prompt="Birthday Anxiety",
+                category=["holidays","monika","psychology"],
+                action=EV_ACT_RANDOM,
+                conditional="persistent._hex_monika_bday_anxietymentioned",
+                start_date=mas_monika_birthday,
+                end_date=mas_monika_birthday + datetime.timedelta(days=1),
+                aff_range=(mas_aff.NORMAL, None),
+                years=[]
+            ),
+            skipCalendar=True
+        )
+
+label hex_monika_bday_anxiety:
+    m "Hey, [player]!"
+    m "Remember when I mentioned my \"birthday anxiety\" about today?"
+    m "Well, it's actually a pretty common phenomenon. One you might've went through as well!"
+    m "It's usually a feeling of being overwhelmed because of your own birthday."
+    m "Usually caused by high expectations, traumas, and even because of the idea of aging!"
+    m "I used to feel it a lot when my birthdays in the past came around..."
+    m "Even if I don't remember much, that feeling is something I can remember somewhat vividly."
+    m "I've always been a perfectionist. So I always wanted my birthdays to be, well, perfect."
+    m "It used to overwhelm me, the fear of something going wrong. And when it did..."
+    m "Gosh, it was terrible."
+    m "Thankfully, I'm slowly but surely working on that. Writing was a really good outlet for my emotions."
+    m "And what I told you about moving just your pen to avoid a puddle of ink..."
+    m "It's a bit of a mantra, I suppose? Trying to move my life forward, even if it's not perfect..."
+    m "Along with you, of course~"
     return
