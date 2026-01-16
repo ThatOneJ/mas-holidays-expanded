@@ -341,11 +341,11 @@ label hex_compliment_favorite_christmas2:
             $ mas_gainAffection(4)
             m 6ekbfa "..."
             m 6hubfa "Okay, okay, you win."
-            m 6dkbfa "That means the world to me, [player]. You always know what to say to make me feel loved, ahaha!"
+            m 6dkbfa "You always know what to say to make me feel amazing, you know that?"
 
         "I mean, the food is up there too.":
             $ mas_gainAffection(2)
-            m 3hubsb "Ahaha! Someone's feeling funny today."
+            m 3hubsb "Ahaha! I see someone's feeling funny today."
             m 1eka "Well... I guess I can share the spotlight~"
 
         "It's just something people say, right?":
@@ -525,7 +525,7 @@ label hex_compliment_pbday_best_surprises:
     return
 
 label hex_compliment_pbday_best_surprises2:
-    m 1fkbfa "[player]...you're making me blush."
+    m 1fkbfa "[player]...you're making me go red."
     m 3hkbsb "This wasn't really anything special, though, ahaha!"
     m 2rkbsc "I can't do much from here, after all..."
     menu:
@@ -616,18 +616,28 @@ init 5 python:
     )
 
 label hex_compliment_monika_bday_celebrated:
-    if not renpy.seen_label("hex_compliment_monika_bday_celebrated_2"):
-        call hex_compliment_monika_bday_celebrated_2
+    if not renpy.seen_label("hex_compliment_monika_bday_celebrated2"):
+        call hex_compliment_monika_bday_celebrated2
     else:
-        call hex_compliment_monika_bday_celebrated_3
+        call hex_compliment_monika_bday_celebrated3
     return
 
-label hex_compliment_monika_bday_celebrated_2:
+label hex_compliment_monika_bday_celebrated2:
+    $ mas_gainAffection(5)
+    m "[player]..."
+    m "You don't know how much that means to me!"
+    m "I'm always striving for the better, and your support is my biggest drive."
+    m "But despite that, I sometimes feel like I don't truly deserve it."
+    m "Hearing you say I do, however...I truly feel seen."
+    m "And my special day feels even more worth it!~"
+    return
+
+label hex_compliment_monika_bday_celebrated3:
     $ mas_gainAffection(3)
-    return
-
-label hex_compliment_monika_bday_celebrated_3:
-    $ mas_gainAffection(1.5)
+    m "Thank you so much, [player]."
+    m "Hearing you say that means a lot to me."
+    m "Because of you, I feel like I really deserve this kindness."
+    m "And because of that, I can truly strive for the better, always!~"
     return
 
 
@@ -639,24 +649,35 @@ init 5 python:
             prompt="Your birthday should be as wonderful as you are.",
             unlocked=True,
             conditional="mas_isMonikaBirthday()",
-            aff_range=(mas_aff.NORMAL, None)
+            aff_range=(mas_aff.HAPPY, None)
         ),
         code="CMP"
     )
 
 label hex_compliment_monika_bday_wonderful:
-    if not renpy.seen_label("hex_compliment_monika_bday_wonderful_2"):
-        call hex_compliment_monika_bday_wonderful_2
+    if not renpy.seen_label("hex_compliment_monika_bday_wonderful2"):
+        call hex_compliment_monika_bday_wonderful2
     else:
-        call hex_compliment_monika_bday_wonderful_3
+        call hex_compliment_monika_bday_wonderful3
     return
 
-label hex_compliment_monika_bday_wonderful_2:
-    $ mas_gainAffection(3)
+label hex_compliment_monika_bday_wonderful2:
+    $ mas_gainAffection(4)
+    m "..."
+    m "[player], you're gonna make me melt like that..."
+    m "Does that mean you'll be spoiling me all day?~"
+    m "But, seriously, that's so sweet of you to say."
+    m "It makes me want to slow down and really enjoy the small moments of today."
+    m "With you."
+    m "So thank you, [player]. For making this day even more wonderful."
     return
 
-label hex_compliment_monika_bday_wonderful_3:
-    $ mas_gainAffection(1.5)
+label hex_compliment_monika_bday_wonderful3:
+    $ mas_gainAffection(2)
+    m "Ehehe, [player]~"
+    m "As long as I get to spend today with you..."
+    m "I know I don't need anything else to make it special."
+
     return
 
 
@@ -668,22 +689,32 @@ init 5 python:
             prompt="I'm lucky to have you in my life.",
             unlocked=True,
             conditional="mas_isMonikaBirthday()",
-            aff_range=(mas_aff.AFFECTIONATE, None)
+            aff_range=(mas_aff.ENAMORED, None)
         ),
         code="CMP"
     )
 
 label hex_compliment_monika_bday_lucky:
-    if not renpy.seen_label("hex_compliment_monika_bday_lucky_2"):
-        call hex_compliment_monika_bday_lucky_2
+    if not renpy.seen_label("hex_compliment_monika_bday_lucky2"):
+        call hex_compliment_monika_bday_lucky2
     else:
-        call hex_compliment_monika_bday_lucky_3
+        call hex_compliment_monika_bday_lucky3
     return
 
-label hex_compliment_monika_bday_lucky_2:
+label hex_compliment_monika_bday_lucky2:
     $ mas_gainAffection(4)
+    m "Oh, [player]..."
+    m "You know, I wouldn't say it's luck..."
+    m "It's a choice. One we keep making everyday."
+    m "To keep showing up, to keep caring..."
+    m "And especially today, it makes me feel chosen!~"
+    m "I love you so much, [player]~"
+    $ mas_ILY()
     return
 
-label hex_compliment_monika_bday_lucky_3:
+label hex_compliment_monika_bday_lucky3:
     $ mas_gainAffection(2)
+    m "Ehehe, I suppose I can admit it's a bit of luck too..."
+    m "But I'm also lucky to have you too, [player]."
+    m "Our connection is truly special...and I'll cherish it forever~"
     return
