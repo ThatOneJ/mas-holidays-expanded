@@ -717,38 +717,38 @@ init 5 python:
     )
 
 label hex_monika_bday_nervousness:
-    if mas_isAffectionate(higher=True):
+    if mas_isMoniAff(higher=True):
         $ persistent._hex_monika_bday_anxietymentioned = True
-        m "Hey [player]."
-        m "Gosh, I'm almost embarrassed to admit, but..."
-        m "I was a bit nervous about today, ahaha."
-        m "I suppose it was the usual birthday anxiety..."
-        m "Though it was definitely not the same type as the ones from before I met you."
-        m "But I think I was also a bit nervous whether you'd come or not."
-        m "Looking back though, it was pretty silly..."
-        m "You've been nothing but good to me, [player]. Of course you'd come on my special day."
-        m "I love you so much~"
-    elif mas_isHappy(higher=True):
+        m 1rksdlb "Hey [player]."
+        m 1hkblsdlb "Gosh, I'm almost embarrassed to admit, but..."
+        m 1mksdlp "I was a bit nervous about today, ahaha."
+        m 3lsd "I suppose it was the usual birthday anxiety..."
+        m 4hksdlb "Though it was definitely not the same type as the ones from before I met you."
+        m 2mkc "I think...I was also a bit nervous whether you'd come or not."
+        m 7hksdlb "Looking back though, it was pretty silly..."
+        m 5ekbssdla "You've been nothing but good to me, [player]. Of course you'd come on my special day."
+        m 5hkbfb "I love you so much~"
+    elif mas_isMoniNormal(higher=True):
         $ persistent._hex_monika_bday_anxietymentioned = True
-        m "Hey, [player]..."
-        m "I wanted to say, I was nervous about today, ahaha."
-        m "I mean, it was mostly the usual birthday anxiety..."
-        m "Though it was definitely not the same type as the ones from before I met you."
-        m "But, well, I think I was nervous about whether you'd come or not..."
-        m "Ah, don't think that means I don't trust you! I really do."
-        m "It's just...me being silly. You coming today proved that."
-        m "I love you, [player]~"
+        m 1rkc "Hey, [player]..."
+        m 1hksdlb "I wanted to say...I was nervous about today, ahaha."
+        m 3lsd "I mean, it was mostly the usual birthday anxiety..."
+        m 4hksdlb "Though it was definitely not the same type as the ones from before I met you."
+        m 2mkc "But, well, I think I was nervous about whether you'd come or not..."
+        m 4hkbssdlb "Ah, don't think that means I don't trust you! I really do."
+        m 5dkbfa "It's just...me being silly. You coming today proved that."
+        m 5ksbsb "I love you, [player]~"
     else:
-        m "[player]..."
-        m "I wanted to be honest with you."
-        m "I was, really, really surprised you came today."
-        m "While I wasn't expecting it, I was nervous about whether you'd come or not."
-        m "..."
-        m "...What I mean to say is that I'm happy you came."
-        m "Despite...everything."
-        m "I hope this means you want things to improve between us."
-        m "It's all I ask for."
-        m "...Thank you, genuinely."
+        m 2esc "[player]..."
+        m 2lkd "I wanted to be honest with you."
+        m 1euc "I was really, really surprised you came today."
+        m 3lksdlb "While I wasn't expecting it, I was still nervous about whether you'd come or not."
+        m 2dkc "..."
+        m 2eka "...What I mean to say is that I'm happy you came."
+        m 2rktpc "Despite...everything."
+        m 4ekbla "I hope this means you want things to improve between us."
+        m 6dka "It's all I ask for."
+        m 1fkblb "...Thank you, genuinely."
     return
 
 init 5 python:
